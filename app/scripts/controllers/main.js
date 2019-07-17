@@ -25,6 +25,7 @@ app.controller('MainCtrl', ['$scope', '$http', function($scope, $http) {
 
 
   $scope.remove = function(cliente){
+      console.log(cliente._id);
     swal({
         title:"Deseja realmente excluir?",
         type:"warning",
@@ -36,8 +37,8 @@ app.controller('MainCtrl', ['$scope', '$http', function($scope, $http) {
     },function(isConfirm){
         if(isConfirm){
             var key = $scope.clientes.indexOf(cliente);
-            cliente.deleteById({id:cliente.clienteId}).$promise.then(function(res,err){
-                if(res){
+            $http.delete(baseUrl+'/delete/'+cliente._id).then(function(response) {
+                if(response){
                     if(key !== -1){
                         $scope.clientes.splice(key,1);
                         swal("Removido!", " Removido com Sucesso! ", "success");

@@ -1,13 +1,43 @@
 <div class="container">
     <h1 class="page-header">Relação de clientes</h1>
     <div class="panel panel-default">
-        <div class="panel-heading"> Clientes </div>
+            <div class="panel-heading"> Cadastro de clientes </div>
+            <div class="panel-body">
+                
+                <table class="table table-bordered">
+                        
+                        <thead>
+                            <tr>
+                                <th class="col-sm-4">Nome</th>
+                                <th class="col-sm-2">Data Nasc</th>
+                                <th class="col-sm-3">Documento</th>
+                                <th class="col-sm-3 text-center">Ação</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><input type = "text" class="form-control" id="nomeInput"/></input></td>
+                                <td><input type = "text" class="form-control" id="dataNascimentoInput" ng-model="birthDate" ui-date-mask="DD/MM/YYYY"/></input></td>
+                                <td><input type = "text" class="form-control" id="documentoInput" ng-model="initializedCpfCnpj1" ui-br-cpfcnpj-mask/></input></td>
+                                <td class="text-center">
+                                    <button class="btn btn-sm btn-default" type="button" name="button"> <span class="glyphicon glyphicon-plus"></span> Incluir</button>
+    
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    </div>
+    </div>
+    <div class="panel panel-default">
+        <div class="panel-heading"> Clientes cadastrados </div>
         <div class="panel-body">
+        
             <table class="table table-bordered">
+                    
                 <thead>
                     <tr>
                         <th class="col-sm-4">Nome</th>
-                        <th class="col-sm-3">Data Nasc</th>
+                        <th class="col-sm-2">Data Nasc</th>
                         <th class="col-sm-3">Documento</th>
                         <th class="col-sm-3 text-center">Ação</th>
                     </tr>
