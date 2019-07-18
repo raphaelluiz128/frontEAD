@@ -15,7 +15,7 @@ angular
     'ngResource',
     'ngRoute',
     'ngSanitize',
-    'ngTouch','oitozero.ngSweetAlert','ui.utils.masks', 
+    'ngTouch','ui.utils.masks', 
     'ui.bootstrap'])
   .config(function ($routeProvider) {
     $routeProvider

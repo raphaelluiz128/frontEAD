@@ -12,6 +12,7 @@ app.use("/styles", express.static(__dirname + "/app/styles"));
 app.use("/views", express.static(__dirname + "/app/views"));
 app.use("/bower_components", express.static(__dirname + "/bower_components"));
 app.use("/node_modules", express.static(__dirname + "/node_modules"));
+app.use("/modules", express.static(__dirname + "/app/modules"));
 app.use(express.static(path.join(__dirname,'/app')));
 app.listen((process.env.PORT || 3600), function(){
     console.log('./app/index.html');

@@ -48,40 +48,20 @@ app.controller('MainCtrl', ['$scope', '$http', '$uibModal', '$rootScope', functi
                 "documento": documento,
                 "servicos": ["Aplicativo Android"]
             }
-            swal({
-                title: "Deseja adicionar?",
-                type: "warning",
-                showCancelButton: true,
-                confirmButtonColor: "#DD6B55",
-                confirmButtonText: "Sim!",
-                cancelButtonText: "Não!",
-                closeOnConfirm: false
-            }, function (isConfirm) {
-                if (isConfirm) {
+         
                     var key = tamanhoClientes + 1;
                     $http.post(baseUrl + '/', objCliente).then(function (response) {
                         if (response) {
                             $rootScope.clientes.push(response.data);
                             swal("Adicionado", " Adicionado com Sucesso! ", "success");
-
-                        }
+                        };
                     });
                 }
-            });
-        };
     };
 
+
     $scope.remover = function (cliente) {
-        swal({
-            title: "Deseja realmente excluir?",
-            type: "warning",
-            showCancelButton: true,
-            confirmButtonColor: "#DD6B55",
-            confirmButtonText: "Sim!",
-            cancelButtonText: "Não!",
-            closeOnConfirm: false
-        }, function (isConfirm) {
-            if (isConfirm) {
+        
                 var key = $rootScope.clientes.indexOf(cliente);
                 $http.delete(baseUrl + '/delete/' + cliente._id).then(function (response) {
                     if (response) {
@@ -90,9 +70,7 @@ app.controller('MainCtrl', ['$scope', '$http', '$uibModal', '$rootScope', functi
                             swal("Removido!", " Removido com Sucesso! ", "success");
                         }
                     }
-                });
-            }
-        });
+                });   
     };
 
 
@@ -120,16 +98,7 @@ app.controller('MainCtrl', ['$scope', '$http', '$uibModal', '$rootScope', functi
             "documento": documento,
             "servicos": ["Aplicativo Android"]
         }
-        swal({
-            title: "Deseja realmente alterar?",
-            type: "info",
-            showCancelButton: true,
-            confirmButtonColor: "#DD6B55",
-            confirmButtonText: "Sim!",
-            cancelButtonText: "Não!",
-            closeOnConfirm: false
-        }, function (isConfirm) {
-            if (isConfirm) {
+   
                 $http.put(baseUrl + '/editar/' + sessionStorage.idEdicao, objCliente).then(function (response) {
                     if (response) {
                         for (var i = 0; i < $scope.clientes.length; i++) {
@@ -138,12 +107,10 @@ app.controller('MainCtrl', ['$scope', '$http', '$uibModal', '$rootScope', functi
                                 $scope.clientes[i].dataNascimento = objCliente.dataNascimento;
                                 $scope.clientes[i].documento = objCliente.documento;
                                 swal("Alterado!", " Dados alterados com Sucesso! ", "success");
-                            }
-                        }
+                            };
+                        };
                     }
-                });
-            }
-        });
+                });   
 
         $uibModalInstance.close();
     };
