@@ -41,7 +41,7 @@
   },
   "scripts": {
     "test": "karma start test\\karma.conf.js",
-    "postinstall": "bower install",
+    "postinstall": "bower install && npm start",
     "start": "grunt serve"
   },
   "dependencies": {
