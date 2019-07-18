@@ -18,9 +18,9 @@
                             <tr>
                                 <td><input type = "text" class="form-control" id="nomeInput"/></input></td>
                                 <td><input type = "text" class="form-control" id="dataNascimentoInput" ng-model="birthDate" ui-date-mask="DD/MM/YYYY"/></input></td>
-                                <td><input type = "text" class="form-control" id="documentoInput" ng-model="initializedCpfCnpj1" ui-br-cpfcnpj-mask/></input></td>
+                                <td><input type = "text" class="form-control" id="documentoInput"  ng-model="initializedCpfCnpj1" ui-br-cpfcnpj-mask/></input></td>
                                 <td class="text-center">
-                                    <button class="btn btn-sm btn-default" type="button" name="button"> <span class="glyphicon glyphicon-plus"></span> Incluir</button>
+                                <button class="btn btn-sm btn-default" type="button" name="button" ng-click="incluir()"> <span class="glyphicon glyphicon-plus"></span> Incluir</button>
     
                                 </td>
                             </tr>
@@ -48,8 +48,8 @@
                         <td><span class="label label-default">{{cliente.dataNascimento}}</span></td>
                         <td><span class="label label-default">{{cliente.documento}}</span></td>
                         <td class="text-center">
-                            <button class="btn btn-sm btn-default" type="button" name="button"> <span class="glyphicon glyphicon-pencil"></span> Editar</button>
-                            <button class="btn btn-sm btn-default" ng-click="remove(cliente)" type="button" name="button"> <span class="glyphicon glyphicon-trash"></span> Excluir</button>
+                            <button class="btn btn-sm btn-default" ng-click="modalEditar(cliente)" type="button" name="button"> <span class="glyphicon glyphicon-pencil"></span> Editar</button>
+                            <button class="btn btn-sm btn-default" ng-click="remover(cliente)" type="button" name="button"> <span class="glyphicon glyphicon-trash"></span> Excluir</button>
                         </td>
                     </tr>
                 </tbody>
