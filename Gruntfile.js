@@ -424,38 +424,12 @@ module.exports = function (grunt) {
         singleRun: true
       }
     },
-    buildcontrol: {
-      options: {
-        dir: 'dist',
-        commit: true,
-        push: true,
-        message: 'Built %sourceName% from commit %sourceCommit% on branch %sourceBranch%'
-      },
-      pages: {
-        options: {
-          remote: 'git@github.com:raphaelluiz128/frontEAD.git',
-          branch: 'master'
-        }
-      },
-      heroku: {
-        options: {
-          remote: 'git@heroku.com:frontead.git',
-          branch: 'master',
-          tag: pkg.version
-        }
-      },
-      local: {
-        options: {
-          remote: '../',
-          branch: 'build'
-        }
-      }
-    }
+    
   });
-/*
+
   grunt.registerTask('heroku',
     ['compass:dist', 'autoprefixer', 'imagemin']);
-*/
+
   grunt.registerTask('serve', 'Compile then start a connect web server', function (target) {
     if (target === 'dist') {
       return grunt.task.run(['build', 'connect:dist:keepalive']);
