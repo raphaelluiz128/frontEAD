@@ -9,6 +9,12 @@ body {
   padding: 0;
 }
 
+.headertable{
+  background-color:#5caceb  !important;
+  color:#fff  !important; 
+  font-weight: 600 !important;
+}
+
 /* Everything but the jumbotron gets side spacing for mobile first views */
 .header,
 .marketing,
@@ -19,7 +25,7 @@ body {
 
 /* Custom page header */
 .header {
-  border-bottom: 1px solid #e5e5e5;
+  border-bottom: 0px;
   margin-bottom: 10px;
 }
 /* Make the masthead heading the same height as the navigation */

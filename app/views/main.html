@@ -1,16 +1,16 @@
 <div class="container">
     <h1 class="page-header">Relação de clientes</h1>
     <div class="panel panel-default">
-            <div class="panel-heading"> Cadastro de clientes </div>
+            <div class="panel-heading headertable"> Cadastro de clientes </div>
             <div class="panel-body">
                 
                 <table class="table table-bordered">
                         
                         <thead>
                             <tr>
-                                <th class="col-sm-4">Nome</th>
-                                <th class="col-sm-2">Data Nasc</th>
-                                <th class="col-sm-3">Documento</th>
+                                <th class="col-sm-4 text-center">Nome</th>
+                                <th class="col-sm-2 text-center">Data Nasc</th>
+                                <th class="col-sm-3 text-center">Documento</th>
                                 <th class="col-sm-3 text-center">Ação</th>
                             </tr>
                         </thead>
@@ -29,24 +29,24 @@
                     </div>
     </div>
     <div class="panel panel-default">
-        <div class="panel-heading"> Clientes cadastrados </div>
+        <div class="panel-heading headertable"> Clientes cadastrados </div>
         <div class="panel-body">
         
             <table class="table table-bordered">
                     
                 <thead>
                     <tr>
-                        <th class="col-sm-4">Nome</th>
-                        <th class="col-sm-2">Data Nasc</th>
-                        <th class="col-sm-3">Documento</th>
+                        <th class="col-sm-4 text-center">Nome</th>
+                        <th class="col-sm-2 text-center">Data Nasc</th>
+                        <th class="col-sm-3 text-center">Documento</th>
                         <th class="col-sm-3 text-center">Ação</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr ng-repeat="cliente in clientes">
-                        <td>{{cliente.nome}}</td>
-                        <td><span class="label label-default">{{cliente.dataNascimento}}</span></td>
-                        <td><span class="label label-default">{{cliente.documento}}</span></td>
+                        <td class="text-center">{{cliente.nome}}</td>
+                        <td class="text-center"><span class="label label-default">{{cliente.dataNascimento}}</span></td>
+                        <td class= "text-center"><span class="label label-default">{{cliente.documento}}</span></td>
                         <td class="text-center">
                             <button class="btn btn-sm btn-default" ng-click="modalEditar(cliente)" type="button" name="button"> <span class="glyphicon glyphicon-pencil"></span> Editar</button>
                             <button class="btn btn-sm btn-default" ng-click="remover(cliente)" type="button" name="button"> <span class="glyphicon glyphicon-trash"></span> Excluir</button>
