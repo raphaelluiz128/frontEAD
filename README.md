@@ -22,3 +22,6 @@ https://github.com/raphaelluiz128/apiEAD/blob/master/README.md
 
 Demonstration url
 https://frontead.herokuapp.com/#!/
+
+api usada
+https://apiead.herokuapp.com/api/clientes
