@@ -34,12 +34,14 @@
     "phantomjs-prebuilt": "^2.1.16",
     "time-grunt": "^1.0.0"
   },
+  
   "engines": {
     "node": ">=0.10.0"
   },
   "scripts": {
     "test": "karma start test\\karma.conf.js",
     "postinstall": "./node_modules/bower/bin/bower install && grunt build",
+    "start": "node app.js"
   },
   "dependencies": {
     "angular-datatables": "^0.6.2",
