@@ -39,7 +39,7 @@
   },
   "scripts": {
     "test": "karma start test\\karma.conf.js",
-    "postinstall": "./node_modules/bower/bin/bower install"
+    "postinstall": "./node_modules/bower/bin/bower install && grunt build",
   },
   "dependencies": {
     "angular-datatables": "^0.6.2",
