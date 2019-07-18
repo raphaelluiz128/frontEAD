@@ -70,9 +70,10 @@ module.exports = function (grunt) {
     // The actual grunt server settings
     connect: {
       options: {
-        port: 9000,
+        port: process.env.PORT || 3600,
         // Change this to '0.0.0.0' to access the server from outside.
         hostname: 'https://frontead.herokuapp.com/',
+        //hostname: 'localhost',
         livereload: 35729
       },
       livereload: {
