@@ -13,18 +13,20 @@ var app = angular.module('frontEadApp');
 var validacao;
 var baseUrl = 'https://apiead.herokuapp.com/api/clientes';
 
+var options = [
+    'Sistema WEB', 'Aplicativo iOS', 'Aplicativo Android', 'Website Estático', 'Website Gerenciável'
+];
+
 app.controller('MainCtrl', ['$scope', '$http', '$uibModal', '$rootScope', function ($scope, $http, $uibModal, $rootScope, data) {
     $rootScope.clientes = {};
+    
+    $rootScope.options =  options;
 
     $http.get(baseUrl).then(function (response) {
         $rootScope.clientes = response.data;
     }, function (err) {
         console.log(err);
     });
-
-
-
-
 
     const validacaoDeCampos = function () {
         if (angular.element('#documentoInput').val() == '' || angular.element('#dataNascimentoInput').val() == '' ||
@@ -39,6 +41,10 @@ app.controller('MainCtrl', ['$scope', '$http', '$uibModal', '$rootScope', functi
 
     $scope.incluir = function () {
         validacaoDeCampos();
+        var opcoes = [];
+        console.log($scope.selection);
+        opcoes = $scope.selection;
+ 
         if (validacao == 1) {
             var documento = angular.element('#documentoInput').val().replace(/\D/g, '');
             var tamanhoClientes = $rootScope.clientes.length;
@@ -46,9 +52,8 @@ app.controller('MainCtrl', ['$scope', '$http', '$uibModal', '$rootScope', functi
                 "nome": angular.element('#nomeInput').val(),
                 "dataNascimento": angular.element('#dataNascimentoInput').val(),
                 "documento": documento,
-                "servicos": ["Aplicativo Android"]
+                "servicos": opcoes
             }
-         
                     var key = tamanhoClientes + 1;
                     $http.post(baseUrl + '/', objCliente).then(function (response) {
                         if (response) {

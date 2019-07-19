@@ -16,7 +16,7 @@ angular
     'ngRoute',
     'ngSanitize',
     'ngTouch','ui.utils.masks', 
-    'ui.bootstrap'])
+    'ui.bootstrap','btorfs.multiselect'])
   .config(function ($routeProvider) {
     $routeProvider
       .when('/', {

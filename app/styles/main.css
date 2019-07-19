@@ -9,6 +9,10 @@ body {
   padding: 0;
 }
 
+.vertical-text-align{
+  vertical-align:middle !important;
+}
+
 .headertable{
   background-color:#5caceb  !important;
   color:#fff  !important; 

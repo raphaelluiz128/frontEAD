@@ -8,10 +8,11 @@
                         
                         <thead>
                             <tr>
-                                <th class="col-sm-4 text-center">Nome</th>
+                                <th class="col-sm-3 text-center">Nome</th>
                                 <th class="col-sm-2 text-center">Data Nasc</th>
                                 <th class="col-sm-3 text-center">Documento</th>
-                                <th class="col-sm-3 text-center">Ação</th>
+                                <th class="col-sm-2 text-center">Serviços</th>
+                                <th class="col-sm-2 text-center">Ação</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -19,9 +20,10 @@
                                 <td><input type = "text" class="form-control" id="nomeInput"/></input></td>
                                 <td><input type = "text" class="form-control" id="dataNascimentoInput" ng-model="birthDate" ui-date-mask="DD/MM/YYYY"/></input></td>
                                 <td><input type = "text" class="form-control" id="documentoInput"  ng-model="initializedCpfCnpj1" ui-br-cpfcnpj-mask/></input></td>
+                                <td><multiselect  ng-model="selection" options="options">
+                                </multiselect></td>
                                 <td class="text-center">
                                 <button class="btn btn-sm btn-default" type="button" name="button" ng-click="incluir()"> <span class="glyphicon glyphicon-plus"></span> Incluir</button>
-    
                                 </td>
                             </tr>
                         </tbody>
@@ -36,18 +38,22 @@
                     
                 <thead>
                     <tr>
-                        <th class="col-sm-4 text-center">Nome</th>
+                        <th class="col-sm-3 text-center">Nome</th>
                         <th class="col-sm-2 text-center">Data Nasc</th>
                         <th class="col-sm-3 text-center">Documento</th>
-                        <th class="col-sm-3 text-center">Ação</th>
+                        <th class="col-sm-2 text-center">Serviços</th>
+                        <th class="col-sm-2 text-center">Ação</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr ng-repeat="cliente in clientes">
-                        <td class="text-center">{{cliente.nome}}</td>
-                        <td class="text-center"><span class="label label-default">{{cliente.dataNascimento}}</span></td>
-                        <td class= "text-center"><span class="label label-default">{{cliente.documento}}</span></td>
-                        <td class="text-center">
+                        <td class="text-center vertical-text-align">{{cliente.nome}}</td>
+                        <td class="text-center vertical-text-align"><span class="label label-default">{{cliente.dataNascimento}}</span></td>
+                        <td class= "text-center vertical-text-align"><span class="label label-default">{{cliente.documento}}</span></td>
+                        <td class="text-center vertical-text-align"><p ng-repeat="servico in cliente.servicos">
+                        {{servico}}
+                        </p></td>
+                        <td class="text-center vertical-text-align">
                             <button class="btn btn-sm btn-default" ng-click="modalEditar(cliente)" type="button" name="button"> <span class="glyphicon glyphicon-pencil"></span> Editar</button>
                             <button class="btn btn-sm btn-default" ng-click="remover(cliente)" type="button" name="button"> <span class="glyphicon glyphicon-trash"></span> Excluir</button>
                         </td>
